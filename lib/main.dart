@@ -1,24 +1,12 @@
-import 'package:flutter/material.dart';
-import 'hello/page.dart';
+import 'package:flame/game.dart';
+import 'package:flutter/widgets.dart';
+
+import 'ember_quest_game.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const GameWidget<EmberQuestGame>.controlled(
+      gameFactory: EmberQuestGame.new,
+    ),
+  );
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: HelloPage(),
-    );
-  }
-}
-
